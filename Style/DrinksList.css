@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(236, 236, 236);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 97vw;
+  margin: auto;
+}
+
+.searchFormContainer {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formTitle {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  height: 150px;
+  justify-content: space-around;
+}
+
+#searchInput {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  transition: all 0.3s linear;
+  color:rgb(133, 132, 132);
+}
+
+#searchInput:focus {
+  box-shadow: 0px 0px 20px 3px #004bff;
+}
+
+#searchInput::placeholder {
+  color: rgb(96, 96, 247);
+}
+
+.formTitle {
+  color: rgb(133, 132, 132);
+  letter-spacing: 1px;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: auto;
+  row-gap: 20px;
+  padding-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  border: rgb(224, 224, 224) solid 3px;
+  border-radius: 10px;
+  height: 180px;
+  width: 170px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s linear;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.imageContainer:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 3px #004bff;
+}
+
+.image {
+  object-fit: cover;
+  height: 180px;
+  width: 180px;
+}
+
+.cardTitle {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: blanchedalmond;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.message {
+  display: none;
+  color: rgb(133, 132, 132);
+}
+
+.show
+{
+  display: block;
+}
+
+.lds-ring {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.lds-ring div {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 164px;
+  height: 164px;
+  margin: 18px;
+  border: 18px solid #004bff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #004bff transparent transparent transparent;
+  top: 200px;
+  left: -40px;
+}
+
+.deactivate {
+  display: none;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .form {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form {
+    width: 50%;
+  }
+
+  .imageContainer {
+    height: 220px;
+    width: 220px;
+  }
+
+  .image {
+    height: 220px;
+    width: 220px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cardsContainer {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 70%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .imageContainer {
+    height: 200px;
+    width: 200px;
+  }
+
+  .image {
+    height: 200px;
+    width: 200px;
+  }
+}
